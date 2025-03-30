@@ -22,7 +22,7 @@ const Blog = () => {
 
   const fetchblogs = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/blog/${id}`, {
+      const res = await fetch(`https://blog-application-backend-new.onrender.com/blog/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -45,7 +45,7 @@ const Blog = () => {
   };
   const clickhandler = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/blog/${id}/comments`, {
+      const res = await fetch(`https://blog-application-backend-new.onrender.com/blog/${id}/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
