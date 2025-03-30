@@ -18,7 +18,7 @@ const User = () => {
 
   const fetchblogs = async () => {
     try {
-      const res = await fetch("http://localhost:5000/blog", {
+      const res = await fetch("https://blog-application-backend-new.onrender.com/blog", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("blogtoken")}`,
@@ -43,7 +43,7 @@ const User = () => {
   const deletehandler=async(id)=>{
     console.log("deleting blog id : ", id)
     try {
-      const res = await fetch(`http://localhost:5000/blog/${id}`,{
+      const res = await fetch(`https://blog-application-backend-new.onrender.com/blog/${id}`,{
         method:"DELETE",
         headers:{
           "Content-Type":"application/json",
