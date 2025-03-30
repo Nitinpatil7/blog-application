@@ -43,7 +43,7 @@ const Editor = () => {
   const [editedblog, seteditedblog] = useState([]);
   const fetchblogs = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/blog/${id}`, {
+      const res = await fetch(`https://blog-application-backend-new.onrender.com/blog/${id}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -72,7 +72,7 @@ const Editor = () => {
     // const plainTextContent = content.replace(/<[^>]+>/g, "");
 
     try {
-      const url = id ? `http://localhost:5000/blog/${id}` : "http://localhost:5000/blog";
+      const url = id ? `https://blog-application-backend-new.onrender.com/blog/${id}` : "https://blog-application-backend-new.onrender.com/blog";
       const method = id ? "PUT" : "POST";
   
       const res = await fetch(url, {
