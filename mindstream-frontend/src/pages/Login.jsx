@@ -11,7 +11,7 @@ const Login = () => {
   const submithandler = async () => {
     if (logindata.logemail !== "" && logindata.logemail !== "") {
       try {
-        const res = await fetch("http://localhost:5000/auth/login", {
+        const res = await fetch("https://blog-application-backend-new.onrender.com/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
