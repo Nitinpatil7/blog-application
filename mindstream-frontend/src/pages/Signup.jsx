@@ -54,7 +54,7 @@ const Login = () => {
       <div className="h-screen flex">
         <div className="w-[50%] h-screen">
           <img
-            src="src\assets\image.png"
+            src="/image.png"
             alt=""
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />

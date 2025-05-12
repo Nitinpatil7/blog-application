@@ -102,7 +102,7 @@ const Login = () => {
 
         <div className="w-[50%] h-screen">
           <img
-            src="src\assets\login.png"
+            src="/login.png"
             alt=""
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
