@@ -48,8 +48,7 @@ function App() {
   return (
     <>
       <div>
-        <nav className="flex justify-between px-10 py-5 w-full relative items-center">
-          <div>
+         <div className="my-5 ml-10">
             <p>
               <span className="text-blue-600 font-extrabold text-3xl">
                 MIND
@@ -57,28 +56,30 @@ function App() {
               <span className="text-red-600 font-bold text-2xl">STREAM</span>
             </p>
           </div>
-          <div className="w-full flex justify-center">
+        <nav className="flex gap-3 w-screen mx-5 mb-10 ml-10 my-5">
+         
+          <div className="w-[80%]">
             <input
               type="search"
               name="search"
               onChange={(e) => setsearch(e.target.value)}
               value={search}
               placeholder="Search Blogs... "
-              className="border-gray-200 border w-[40%] h-14 rounded-lg bg-gray-100 pl-5 text-lg font-semibold focus:outline-none "
+              className="border-gray-200 border w-full h-14 rounded-lg bg-gray-100 pl-5 text-lg font-semibold focus:outline-none "
             />
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-5 bg-black w-[13%]  text-white text-center justify-center items-center text-xl font-semibold rounded-full h-12">
             <Link to={`/home/${user}/profile`}>
-              <button className="w-16 bg-black text-white rounded-full text-xl font-semibold h-14">
+              <button className="">
                 {username.charAt(0).toUpperCase()}
               </button>
             </Link>
           </div>
         </nav>
 
-        <main className="px-10">
-          <p className="text-4xl font-semibold pl-14">Blog posts</p>
-          <p className="text-lg text-neutral-500 font-semibold pl-14 pt-5">
+        <main className="ml-10">
+          <p className="text-4xl font-semibold ">Blog posts</p>
+          <p className="text-lg text-neutral-500 font-semibold pt-5">
             Here, We Shere tips, guides, and stories that inspire your next
             adventure.
           </p>
@@ -92,7 +93,7 @@ function App() {
               No blogs found
             </p>
           ) : (
-            <div className="flex w-full max-h-max relative">
+            <div >
               <div className=" flex flex-wrap gap-5 mt-10  w-full">
                 {data.map((item, index) => {
                   const createdAt = item.createdat;
@@ -106,7 +107,7 @@ function App() {
                       <Link to={`/home/${user}/blog/${item._id}`}>
                         <div
                           key={index}
-                          className="w-[400px] h-[500px] px-4 py-4 bg-gray-100 rounded-2xl flex flex-col gap-2"
+                          className="w-[400px] h-[500px] px-4 py-5 bg-gray-100 rounded-2xl flex flex-col gap-2"
                         >
                           <img
                             src={item.images}
@@ -140,8 +141,8 @@ function App() {
                   );
                 })}
               </div>
-              <div className="w-[35%]  mr-10">
-                <ul className="flex flex-wrap gap-3 pt-10 ">
+              <div>
+                <ul className="flex pt-10 gap-5 flex-wrap ">
                   {data.map((item, index) => {
                     return (
                       <>
@@ -159,7 +160,7 @@ function App() {
             </div>
           )}
         </main>
-        <div>
+        <div >
           <Footer />
         </div>
       </div>

@@ -51,17 +51,18 @@ const Login = () => {
   };
   return (
     <>
-      <div className="h-screen flex">
-        <div className="w-[50%] h-screen">
+      <div className="lg:w-screen lg:flex">
+        <div className="w-[50%]  h-screen hidden lg:block">
           <img
             src="src\assets\image.png"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+           className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-[50%] h-screen pl-20">
-          <div className="flex flex-col pt-32 ">
-            <h1 className=" py-2 text-3xl font-bold">
+
+
+          <div className="flex flex-col mt-15 text-center w-full lg:w-[50%] ">
+            <h1 className=" py-2 mx-10 text-3xl font-bold">
               Welcome TO{" "}
               <span className="text-blue-600 font-extrabold text-4xl">
                 MIND
@@ -79,7 +80,7 @@ const Login = () => {
                 onChange={changehandler}
                 value={signdata.username}
                 id="username"
-                className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
+                className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
               />
             </label>
             <label className="flex flex-col text-xl font-semibold py-3 gap-2">
@@ -90,7 +91,7 @@ const Login = () => {
                 onChange={changehandler}
                 value={signdata.signemail}
                 id="email"
-                className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
+                className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
               />
             </label>
             <label className="flex flex-col text-xl font-semibold py-3 gap-2 pb-5">
@@ -101,24 +102,24 @@ const Login = () => {
                 onChange={changehandler}
                 value={signdata.signpassword}
                 id="password"
-                className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
+                className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
               />
             </label>
             <button
               onClick={() => submithandler()}
-              className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-xl text-white font-bold py-2  bg-purple-700"
+              className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-xl text-white font-bold py-2  bg-purple-700"
             >
               Sign In
             </button>
-            <p className="text-xl font-semibold pl-[28%] pt-5 ">{msg}</p>
+            <p className="text-xl font-semibold mx-10 pt-5 ">{msg}</p>
 
-            <div className="flex gap-3 w-[75%] pl-5 items-center py-10">
-              <p className="w-[40%] h-[2px] bg-gray-600"></p>
-              <p className="text-gray-600 font-semibold text-xl px-2">OR</p>
-              <p className="w-[40%] h-[2px] bg-gray-600"></p>
+            <div className="flex gap-3 w-[85%] items-center justify-center mx-10 py-10">
+              <p className="w-[45%] h-[2px] bg-gray-600"></p>
+              <p className="text-gray-600 font-semibold text-xl ">OR</p>
+              <p className="w-[45%] h-[2px] bg-gray-600"></p>
             </div>
 
-            <button className="flex gap-5 items-center justify-center text-xl font-semibold bg-white text-black border border-gray-300 rounded-lg shadow-md max-w-[70%] px-6 py-2   hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ">
+            <button className="flex gap-5 items-center justify-center text-xl font-semibold bg-white text-black border border-gray-300 rounded-lg shadow-md max-w-[85%] mx-10 px-6 py-2   hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ">
               <svg
                 className="h-6 w-6 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@ const Login = () => {
               <span>Continue with Google</span>
             </button>
 
-            <p className="flex pl-48 py-10 gap-1">
+            <p className="flex   justify-center py-10 gap-1">
               <span className="text-lg text-gray-500 font-semibold">
                 You have an account?{" "}
               </span>
@@ -187,7 +188,6 @@ const Login = () => {
               </Link>
             </p>
           </div>
-        </div>
       </div>
     </>
   );

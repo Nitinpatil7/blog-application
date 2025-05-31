@@ -65,22 +65,22 @@ const User = () => {
   return (
     <>
       <div className="w-screen relative">
-        <div className="pt-10 pl-10 ">
-          <div className="flex justify-between items-center px-10">
+        <div className="pt-10 ">
+          <div className="flex gap-2 mx-2 justify-between">
             <p>
               <span className="text-blue-600 font-extrabold text-3xl">
                 MIND
               </span>
               <span className="text-red-600 font-bold text-2xl">STREAM</span>
             </p>
-          <div className="flex gap-5">
+          <div className="flex gap-2">
           <Link to={`/home/${user}`}>
-              <button className="bg-black px-3 py-2 rounded-xl text-white text-xl font-semibold ">
+              <button className="bg-black px-2 py-2 rounded-xl text-white text-lg  ">
                 {"Home"}
               </button>
             </Link>
             <Link to={`/login`}>
-              <button className="bg-black px-3 py-2 rounded-xl text-white text-xl font-semibold ">
+              <button className="bg-black px-3 py-2 rounded-xl text-white text-lg ">
                 {"Log Out"}
               </button>
             </Link>
@@ -88,8 +88,8 @@ const User = () => {
           </div>
 
           <div className="pt-10 flex  flex-col items-center justify-center gap-1">
-            <p className="text-5xl font-extrabold bg-black text-white px-10 py-8 mb-5
-            rounded-xl">{userdata.charAt(0)}</p>
+            <p className="text-5xl font-semibold bg-black text-white mb-5 py-5 px-8
+            rounded-full">{userdata.charAt(0)}</p>
             <div className="flex flex-col items-center">
               <p className="text-3xl font-semibold pt-2">
                 {userdata.toUpperCase()}
@@ -109,7 +109,7 @@ const User = () => {
         <div className="pt-7 pl-20 ">
           <p className="text-3xl font-semibold pl-16 ">Your Posts: </p>
 
-          <div className="w-full flex flex-wrap gap-5 mt-10 ml-24 mb-20 ">
+          <div className="w-screen flex flex-wrap gap-5 items-center justify-center ">
             {data.map((item, index) => {
               const createdAt = item.createdat;
               const date = new Date(createdAt);

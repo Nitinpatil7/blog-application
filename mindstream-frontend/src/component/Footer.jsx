@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black mt-20">
+    <footer className=" mt-10 bg-black">
       <div className="container mx-auto flex flex-wrap justify-between px-10 py-10 gap-10 md:flex-nowrap">
         {/* Brand Info */}
         <div className="w-full md:w-1/4 flex flex-col gap-5">

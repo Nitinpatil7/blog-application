@@ -9,6 +9,7 @@ const authmiddlwere = async (req, res, next) => {
   }
   try {
     const decode = jwt.verify(token, process.env.JWT_SCT);
+    console.log("Decoded Token", decode);
     req.user = await User.findById(decode.id).select("-password");
 
     if (!req.user) {

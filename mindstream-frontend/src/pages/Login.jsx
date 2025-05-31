@@ -33,9 +33,13 @@ const Login = () => {
           console.log(data.user.name)
           console.log(data.token);
         } else {
-          setmsg(data.message || "Login Failed");
+          setTimeout(() => {
+            navigate(`/signup`)
+          }, 1000);
+          setmsg("User not found, Please Sign Up");
         }
       } catch (error) {
+        
         setmsg(`loged error : ${error}`);
       }
       console.log(logindata);
@@ -45,14 +49,14 @@ const Login = () => {
   };
   return (
     <>
-      <div className="h-screen flex">
-        <div className="w-[50%] h-screen pl-28">
-          <p className="pt-20 pb-20">
+      <div className="lg:flex lg:w-screen">
+        <div className="h-screen  lg:w-[50%]   mt-20">
+          <p className="absolute top-15 left-10">
             <span className="text-blue-600 font-extrabold text-3xl">MIND</span>
             <span className="text-red-600 font-bold text-2xl">STREAM</span>
           </p>
 
-          <div className="flex flex-col pt-10 ">
+          <div className="mt-40  flex flex-col text-center  w-full  ">
             <h1 className=" py-2 text-3xl font-semibold">Welcome back</h1>
             <p className=" text-xl py-2 text-gray-600">
               Please enter your details
@@ -65,7 +69,7 @@ const Login = () => {
                 type="email"
                 name="logemail"
                 id="email"
-                className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
+                className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
               />
             </label>
             <label className="flex flex-col text-xl font-semibold py-3 gap-2">
@@ -76,17 +80,17 @@ const Login = () => {
                 onChange={changehandler}
                 value={logindata.logpassword}
                 id="password"
-                className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
+                className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-lg font-semibold focus:outline-none "
               />
             </label>
             <button
               onClick={() => submithandler()}
-              className="border-gray-300 border w-[70%] h-14 rounded-[5px] pl-5 text-xl text-white font-bold py-2 bg-purple-700"
+              className="border-gray-300 border w-[85%] mx-10 h-14 rounded-[5px] pl-5 text-xl text-white font-bold py-2 mt-5 bg-purple-700"
             >
               Sign In
             </button>
-            <p className="text-xl font-semibold pt-5 pl-[25%]">{msg}</p>
-            <p className="flex pl-48 py-2 gap-1">
+            <p className="text-xl font-semibold pt-5">{msg}</p>
+            <p className=" py-2 gap-1">
               <span className="text-lg text-gray-500 font-semibold">
                 Don't have an account?{" "}
               </span>
@@ -100,11 +104,12 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="w-[50%] h-screen">
+        <div className="w-[50%] h-screen hidden lg:block ">
           <img
+          className="w-full h-full object-cover"
             src="src\assets\login.png"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            
           />
         </div>
       </div>

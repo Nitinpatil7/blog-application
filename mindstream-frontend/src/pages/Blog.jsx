@@ -76,16 +76,12 @@ const Blog = () => {
   return (
     <>
       <div className="h-max w-screen">
-        <div className="pt-5 px-10 py-10 flex justify-between items-center">
+        <div className="pt-10 px-10 py-10 flex justify-between items-center">
           <p>
             <span className="text-blue-600 font-extrabold text-5xl">MIND</span>
             <span className="text-red-600 font-bold text-4xl">STREAM</span>
           </p>
-          <Link to={`/home/${user}`}>
-            <button className="bg-black px-3 py-2 rounded-xl text-white text-xl font-semibold mr-16">
-              {" <- Back to Home"}
-            </button>
-          </Link>
+         
         </div>
         <div>
           {Array.isArray(data) ? (
@@ -97,9 +93,9 @@ const Blog = () => {
               </div>
             ))
           ) : data ? (
-            <div className="w-full flex">
-              <div className="w-[70%] px-10 min-h-screen border-2  border-gray-300 ml-10 mr-2">
-                <h1 className="text-5xl py-5  px-5 font-bold ">
+            <div className="w-screen flex flex-col">
+              <div className="w-screen px-2 min-h-screen   ml-10 mr-2">
+                <h1 className="text-3xl py-5  px-5 font-semibold ">
                   {data.title} :
                 </h1>
                 <img
@@ -110,14 +106,14 @@ const Blog = () => {
 
                 <p
                   dangerouslySetInnerHTML={{ __html: data.content }}
-                  className="text-2xl py-5 px-5"
+                  className="text-xl py-5 px-5"
                 ></p>
                 <p className="px-5">Posted At: {date}</p>
                 <p className="px-5 text-lg font-semibold pb-5">
                   Posted By: {data.author.name}
                 </p>
               </div>
-              <div className="w-[22.5%] min-h-screen border-2 border-gray-300 px-5 py-10">
+              <div className="w-screen  px-10 py-10">
                 <div>
                   <p className="text-3xl font-semibold">Category:</p>
                   <p className="bg-gray-200 text-center text-2xl font-semibold rounded-lg my-5 py-2 px-1">
@@ -146,22 +142,22 @@ const Blog = () => {
           )}
         </div>
 
-        <div className="py-2 px-16 border-2 my-5 ml-10 min-h-96 w-[93%] border-gray-300">
-          <p className="text-xl font-semibold">Comments:</p>
-          <div>
+        <div className="py-2 w-screen mx-10 ">
+          <p className="text-2xl font-semibold">Comments:</p>
+          <div className="flex gap-5 items-center">
             <input
               type="text"
               name="comment"
               value={comment}
               onChange={(e) => setcomment(e.target.value)}
               placeholder="Write Comment..."
-              className="h-14 w-[45%] bg-gray-200 rounded-lg mx-5 my-5 text-xl font-semibold px-10 focus:outline-none "
+              className="h-14 w-[95%] bg-gray-200 rounded-lg  my-5 text-xl font-semibold px-10 focus:outline-none "
             />
             <button
               onClick={() => clickhandler()}
-              className="bg-black text-white h-14 rounded-lg text-xl font-semibold px-5"
+              className="bg-black text-white h-14 rounded-lg text-lg font-semibold px-5"
             >
-              Submit Comment
+              Submit 
             </button>
           </div>
           <div className="px-10">
