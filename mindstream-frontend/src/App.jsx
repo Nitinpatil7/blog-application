@@ -13,7 +13,7 @@ function App() {
   }, []);
   const fetchblogs = async () => {
     try {
-      const res = await fetch("http://localhost:5000/blog", {
+      const res = await fetch("https://blog-application-backend-new.onrender.com/blog", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("blogtoken")}`,
