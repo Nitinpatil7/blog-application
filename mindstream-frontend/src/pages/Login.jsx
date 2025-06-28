@@ -107,8 +107,8 @@ const Login = () => {
         <div className="w-[50%] h-screen hidden lg:block ">
           <img
           className="w-full h-full object-cover"
-            src="src\assets\login.png"
-            alt=""
+            src="\login.png"
+            alt="login"
             
           />
         </div>
