@@ -54,7 +54,7 @@ const Login = () => {
       <div className="lg:w-screen lg:flex">
         <div className="w-[50%]  h-screen hidden lg:block">
           <img
-            src="src\assets\image.png"
+            src="\image.png"
             alt=""
            className="w-full h-full object-cover"
           />
